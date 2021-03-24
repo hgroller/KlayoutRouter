@@ -69,7 +69,6 @@ def Get_Text():
     iter.next()
 
   srt = sorted(coords)
-  print("The Array is: ", srt)
  #Remove Duplicates from text list
   strlst = sorted(list(dict.fromkeys(strlst)))
   return strlst,srt
@@ -103,7 +102,7 @@ def Router():
   filtered = None
   for search in stlst: 
     filtered = list(filter(lambda x:x[0]==search,srt))
-    #print('The filtered list for is: ' , filtered[0]) 
+ 
     wd = .3
     lay = 11
     #Testing
@@ -128,12 +127,12 @@ def Router():
     loc1 = (lc1,lc2)
     loc2 = (lc3,lc4)
     
-    print(l1,l2,l3,l4)
-    #print(lc1,lc2,lc3,lc4)
+
+
 
     
     pth  = AstarRouter.main(loc1,loc2)
-    print("The path is = ", pth)
+
     
   #Parse in the Vert/Horz Coords
     vert = [el[0] for el in pth]
@@ -175,11 +174,11 @@ def Router():
     wd = .3
     vlen = len(vet)
     
-    print("Length of vet=", vlen)
+
     for p in vet: 
       filteredv = list(filter(lambda x:x[0]==p,pth))
       if cnt != vlen:
-          print("Vert =   ",filteredv)
+       
           M = [x1a,y1a]
           vout = [[i+j for i,j in zip(subl, subm)] for subl, subm in zip(filteredv, itertools.cycle([M]))]
           crd = coords(vout)
